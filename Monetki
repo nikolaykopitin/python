@@ -13,7 +13,7 @@ amount_50 = 0
 amount_10 = 0
 amount_5 = 0
 amount_1 = 0
-sdacha = int(input('Введите сколько нужно выдать сдачи: '))
+sdacha = int(input('Cколько нужно выдать сдачи: '))
 while True:
     if sdacha == 0:
         break
@@ -43,4 +43,4 @@ while True:
         break
 
 print('Будет выдано {} монет номиналом 50, {} монет номиналом 10, {} монет номиналом 5, {} монет номиналом 1'.format(amount_50, amount_10, amount_5, amount_1))
-print('Всего получится %s монет' % (amount_50 + amount_10 + amount_5 + amount_1))
+print('Всего монет: %s' % (amount_50 + amount_10 + amount_5 + amount_1))
