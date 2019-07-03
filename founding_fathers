@@ -1,0 +1,23 @@
+foundingFathers = {'Niklaus Wirth': 'Pascal',
+'Andrei Alexandrescu': 'C++',
+'Larry Wall': 'Perl',
+'Guido van Rossum': 'Python',
+'Jeremy Ashkenas': 'CoffeeScript',
+'Dennis Macalastaire Ritchie': 'C',
+'John George Kemeny': 'Basic',
+'Peter Naur': 'Algol',
+'James Gosling': 'Java',
+'Konrad Ernst Otto Zuse': 'Plankalkül',
+}
+
+
+operation = input('Enter \'Sort\' or \'Search\'\n')
+if operation == 'Sort':
+    sortName = sorted(foundingFathers.keys())
+    for element in sortName:
+        print(element, " - ", foundingFathers[element])
+elif operation == 'Search':
+    searchName = input("Enter full name: \n")
+    for name in foundingFathers.keys():
+        if name == searchName:
+            print(searchName, 'created', foundingFathers[name])
