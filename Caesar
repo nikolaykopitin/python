@@ -1,0 +1,16 @@
+eng_alph = ' abcdefghijklmnopqrstuvwxyz'
+rus_aplph = ' абвгдеёжзийклмнопрстуфхцчшщъыьэюя'
+
+language = input("Choose language.Russian - rus, English - eng\n")
+if language == "eng":
+    alph = eng_alph
+elif language == "rus":
+    alph = rus_aplph
+
+key = int(input("Enter cipher key \n"))
+message = input("Enter your message \n").strip()
+cipher = ''
+
+for i in message:
+    cipher += alph[(alph.index(i) + key) % len(alph)]
+print('Result: "' + cipher + '"')
