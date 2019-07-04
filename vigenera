@@ -1,1 +1,25 @@
-v
+import re
+
+alphabet = "абвгдеёжзийклмнопрстуфхцчшщъыьэюя"
+UpperAlphabet = "АБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯ"
+message = input("Enter the message you want to encrypt: ")
+key = input("Enter keyword:")
+cipher = ""
+
+j = 0
+for i in message:
+    if re.search(r"[А-Я]", i) or re.search(r"[а-я]", i):
+        if i in alphabet:
+            index = (alphabet.index(i) + alphabet.index(key[j])) % 33
+            cipher += alphabet[index]
+        else:
+            index = (UpperAlphabet.index(i) + alphabet.index(key[j])) % 33
+            cipher += UpperAlphabet[index]
+        if j == len(key) - 1:
+            j = 0
+        else:
+            j += 1
+    else:
+        cipher += i
+
+print(cipher)
